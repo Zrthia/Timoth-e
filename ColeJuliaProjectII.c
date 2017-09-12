@@ -4,6 +4,10 @@
 
 task main()
 {
+	while(SensorValue(buttonleft)
+
+
+
 	motor[motorC] = 76;
 	motor[motorB] = 80;
 	wait1Msec(1000);

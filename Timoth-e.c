@@ -16,7 +16,7 @@ task main()
 			wait1Msec(1000);
 			motor[motorB] = 100;
 			motor[motorC] = -100;
-			wait1Msec(650);
+			wait1Msec(595);
 	  }
 
 
@@ -27,3 +27,4 @@ task main()
 }
 
 //variables can be used to mark what speeds result in a 90 degree turn or 180 turn
+//if wait1Msec 595 will turn 180 degrees around with -100 and 100

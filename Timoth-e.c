@@ -22,3 +22,5 @@ task main()
 
 
 }
+
+//variables can be used to mark what speeds result in a 90 degree turn or 180 turn

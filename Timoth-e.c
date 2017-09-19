@@ -15,6 +15,16 @@
 //{
 // do mode 2 stuff
 //}
+//Create mode variable
+//while(true)
+//{
+//if(mode == whatever)
+//{
+//do stuff for that mode
+//if(condition to move to another
+//{
+//mode=other mode;
+//}
 //}
 
 task main()

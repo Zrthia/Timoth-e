@@ -30,16 +30,17 @@
 task main()
 {
 	int speedleft = 0;
-	int speedright = 100;
+	int speedright = 90;
 	int turn180 = 595;
 
 	while(speedleft <= 100)
 	{
 		motor[motorB] = speedleft;
 		motor[motorC] = speedright;
-		wait1Msec(2000);
+		wait1Msec(1500);
 
 		speedleft = speedleft + 5;
+		speedright = speedright + 2;
 	}
 
 	while(true)
@@ -47,16 +48,19 @@ task main()
 		motor[motorB]= 100;
 		motor[motorC]= 100;
 		wait1Msec(1000);
-		if(SensorValue(ButtonRight) == 1)
+		if(SensorValue(ButtonRight && ButtonLeft) == 1)
 		{
 			motor[motorC] = -100;
 			motor[motorB] = -100;
-			wait1Msec(1500);
+			wait1Msec(500);
 			motor[motorB] = 100;
 			motor[motorC] = -100;
 			wait1Msec(turn180);
-			motor[motorB] = 75;
-			motor[motorC] = 65;
+			motor[motorB] = 100;
+			motor[motorC] = 100;
+			wait1Msec(100);
+			motor(motorB) = 30;
+			motor(motorC) = 70;
 			wait1Msec(3000);
 		}
 	}

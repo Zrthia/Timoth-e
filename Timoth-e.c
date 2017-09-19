@@ -4,6 +4,36 @@
 
 task main()
 {
-	int 000000000000000000000
+	int speedleft = 0;
+	int speedright = 100;
+	int turn180 = 595;
+
+	while(speedleft <= 100)
+	{
+		motor[motorB] = speedleft;
+		motor[motorC] = speedright;
+		wait1Msec(2000);
+
+		speedleft = speedleft + 5;
+	}
+
+	while(true)
+	{
+		motor[motorB]= 100;
+		motor[motorC]= 100;
+		wait1Msec(1000);
+		if(SensorValue(ButtonRight) == 1)
+		{
+			motor[motorC] = -100;
+			motor[motorB] = -100;
+			wait1Msec(1500);
+			motor[motorB] = 100;
+			motor[motorC] = -100;
+			wait1Msec(595);
+			motor[motorB] = 75;
+			motor[motorC] = 65;
+			wait1Msec(3000);
+		}
+	}
 
 }

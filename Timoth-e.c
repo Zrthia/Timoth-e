@@ -41,28 +41,45 @@ task main()
 
 		speedleft = speedleft + 5;
 		speedright = speedright + 2;
-	}
 
-	while(true)
-	{
-		motor[motorB]= 100;
-		motor[motorC]= 100;
-		wait1Msec(1000);
 		if(SensorValue(ButtonRight && ButtonLeft) == 1)
 		{
-			motor[motorC] = -100;
-			motor[motorB] = -100;
-			wait1Msec(500);
-			motor[motorB] = 100;
-			motor[motorC] = -100;
-			wait1Msec(turn180);
-			motor[motorB] = 100;
-			motor[motorC] = 100;
-			wait1Msec(100);
-			motor(motorB) = 30;
-			motor(motorC) = 70;
-			wait1Msec(3000);
+			while(true)
+			{
+				motor[motorB]= 100;
+				motor[motorC]= 100;
+				wait1Msec(1000);
+				if(SensorValue(ButtonRight && ButtonLeft) == 1)
+				{
+					motor[motorC] = -100;
+					motor[motorB] = -100;
+					wait1Msec(250);
+					motor[motorB] = 100;
+					motor[motorC] = -100;
+					wait1Msec(turn180);
+					motor[motorB] = 100;
+					motor[motorC] = 100;
+					wait1Msec(100);
+					motor(motorB) = 30;
+					motor(motorC) = 65;
+					wait1Msec(2000);
+				}
+				if(getMotorEncoder(motorB)&& getMotorEncoder(motorC) > 3600)
+				{
+					while(speedleft <= 100)
+					{
+						motor[motorB] = speedleft;
+						motor[motorC] = speedright;
+						wait1Msec(1500);
+
+						speedleft = speedleft + 5;
+						speedright = speedright + 2;
+
+					}
+
+
+				}
+			}
 		}
 	}
-
 }

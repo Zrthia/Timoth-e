@@ -64,13 +64,13 @@ task main()
 					motor(motorC) = 65;
 					wait1Msec(2000);
 				}
-				if(getMotorEncoder(motorB)&& getMotorEncoder(motorC) > 3600)
+				if(getMotorEncoder(motorB)> 3600 && getMotorEncoder(motorC) > 3600)
 				{
-					while(speedleft <= 100)
+					while(speedleft <= 100 && speedright <= 100)
 					{
 						motor[motorB] = speedleft;
 						motor[motorC] = speedright;
-						wait1Msec(1500);
+						wait1Msec(1000);
 
 						speedleft = speedleft + 5;
 						speedright = speedright + 2;

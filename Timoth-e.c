@@ -43,7 +43,7 @@ task main()
 		speedleft = speedleft + 5;
 		speedright = speedright + 2;
 		time = time + 500;
-			while(speedleft <= 100 && time <= 3000)
+			while(speedleft <= 100)
 			{
 				motor[motorB] = speedleft + 40;
 				motor[motorC] = speedright + 50;

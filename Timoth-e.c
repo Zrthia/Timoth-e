@@ -32,61 +32,16 @@ task main()
 {
 	int speedleft = 0;
 	int speedright = 20;
-	int turn180 = 595;
 	int time = 1000;
-	while(speedleft <= 50)
-	{
-		motor[motorB] = speedleft;
-		motor[motorC] = speedright;
-		wait1Msec(time);
 
-		speedleft = speedleft + 5;
-		speedright = speedright + 2;
-		time = time + 500;
-			while(speedleft <= 70)
-			{
-				motor[motorB] = speedleft + 40;
-				motor[motorC] = speedright + 50;
-				wait1Msec(1500);
-
-				speedleft = speedleft + 4;
-				speedright = speedright + 3;
-				time = time + 250;
-			}
-				while(speedleft <= 100)
-				{
-					motor[motorB] = speedleft + 70;
-					motor[motorC] = speedright + 90;
-					wait1Msec(4000);
-
-					speedleft = speedleft + 2;
-					speedright = speedright + 1;
-					time = time + 250
-				}
-		if(SensorValue(ButtonRight) == 1 || SensorValue(ButtonLeft == 1)
+		while(speedleft <= 100)
 		{
-			while(true)
-			{
-				motor[motorB]= 100;
-				motor[motorC]= 100;
-				wait1Msec(1000);
-				if(SensorValue(ButtonRight) == 1)
-				{
-					motor[motorC] = -100;
-					motor[motorB] = -100;
-					wait1Msec(450);
-					motor[motorB] = 100;
-					motor[motorC] = -100;
-					wait1Msec(200);
-					motor[motorB] = 100;
-					motor[motorC] = 100;
-					wait1Msec(100);
-					motor(motorB) = 30;
-					motor(motorC) = 65;
-					wait1Msec(2000);
+			motor[motorB] = speedleft + 40;
+			motor[motorC] = speedright + 50;
+			wait1Msec(1500);
 
-				}
-			}
+			speedleft = speedleft + 4;
+			speedright = speedright + 3;
+			time = time + 250;
 		}
-	}
 }

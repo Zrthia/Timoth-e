@@ -43,7 +43,7 @@ task main()
 		speedleft = speedleft + 5;
 		speedright = speedright + 2;
 		time = time + 500;
-			while(speedleft <= 100)
+			while(speedleft <= 70)
 			{
 				motor[motorB] = speedleft + 40;
 				motor[motorC] = speedright + 50;
@@ -53,7 +53,16 @@ task main()
 				speedright = speedright + 3;
 				time = time + 250;
 			}
+				while(speedleft <= 100)
+				{
+					motor[motorB] = speedleft + 70;
+					motor[motorC] = speedright + 90;
+					wait1Msec(4000);
 
+					speedleft = speedleft + 2;
+					speedright = speedright + 1;
+					time = time + 250
+				}
 		if(SensorValue(ButtonRight) == 1 || SensorValue(ButtonLeft == 1)
 		{
 			while(true)

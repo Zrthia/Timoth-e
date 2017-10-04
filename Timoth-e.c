@@ -7,9 +7,22 @@ task main()
 	int speedright = 20;
 	int time = 1000;
 
+
+		while(speedleft <= 80)
+		{
+			motor[motorB] = speedleft + 40;
+			motor[motorC] = speedright + 50;
+			wait1Msec(time);
+
+			speedleft = speedleft + 3;
+			speedright = speedright + 2;
+			time = time + 500;
+		}
+
+
 	while(true)
 	{
-		while((SensorValue(ButtonLeft) == 0 && speedleft <= 100)
+		while((SensorValue(ButtonLeft) == 0 && speedleft <= 100))
 			{
 				motor(motorB) = speedleft + 20;
 				motor(motorC) = speedright + 50;
@@ -17,7 +30,7 @@ task main()
 
 				speedleft = speedleft + 3;
 				speedright = speedright + 2;
-				time = time + 500
+				time = time + 500;
 			}
 
 		while(SensorValue(ButtonLeft) == 1 || SensorValue(ButtonRight)== 1)
@@ -29,8 +42,8 @@ task main()
 			motor(motorB) = 60;
 			motor(motorC) = 70;
 			wait1Msec(1900);
-			resetMotorEncoder(MotorB);
-			resetMotorEncoder(MotorC);
+			resetMotorEncoder(motorB);
+			resetMotorEncoder(motorC);
 
 			//this is successful!
 
@@ -41,7 +54,7 @@ task main()
 		time = 1000;
 
 
-		while((getMotorEncoder(motorB) > 5000 && SensorValue(ButtonLeft) == 0 && speedleft <= 80)
+		while((getMotorEncoder(motorB) > 5000 && SensorValue(ButtonLeft) == 0 && speedleft <= 80))
 		{
 			//(spiraling)
 			motor(motorB) = speedleft + 40;
@@ -50,7 +63,7 @@ task main()
 
 			speedleft = speedleft + 3;
 			speedright = speedright + 2;
-			time = time + 500
+			time = time + 500;
 
 		}
 

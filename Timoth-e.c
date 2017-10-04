@@ -34,6 +34,7 @@ task main()
 	int speedright = 20;
 	int turn180 = 595;
 	int time = 1000;
+
 	while(speedleft <= 50)
 	{
 		motor[motorB] = speedleft;

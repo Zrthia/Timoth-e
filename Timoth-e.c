@@ -11,7 +11,7 @@ task main()
 	{
 		while((SensorValue(ButtonLeft) == 0 && speedleft <= 100)
 			{
-				motor(motorB) = speedleft + 40;
+				motor(motorB) = speedleft + 20;
 				motor(motorC) = speedright + 50;
 				wait1Msec(time);
 

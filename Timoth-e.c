@@ -41,7 +41,24 @@ task main()
 			resetMotorEncoder(motorB);
 			resetMotorEncoder(motorC);
 
+<<<<<<< HEAD
 			//This is wallfollowing
+=======
+		}
+			if(SensorValue(ButtonLeft) == 0 || SensorValue(ButtonRight) == 0))
+			{
+				motor(motorB) = 100;
+				motor(motorC) = 100;
+				wait1Mec(595);
+			}
+
+
+
+
+		speedleft = 0;
+		speedright = 20;
+		time = 1000;
+>>>>>>> cf4570a70a9ea0f52328bb56cc7a41ca7270f490
 
 			wfta = wfta + 1
 

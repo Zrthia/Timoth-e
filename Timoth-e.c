@@ -10,7 +10,7 @@ task main()
 		int speedleft = 0;
 		int speedright = 20;
 		int time = 1000;
-		int wfta = 0
+		int wfta = 0;
 
 		// these are variables
 
@@ -27,7 +27,7 @@ task main()
 				//this is spiraling
 			}
 
-		wfta = 0
+		wfta = 0;
 
 		while(SensorValue(ButtonLeft) == 1 || SensorValue(ButtonRight)== 1)
 		{
@@ -41,26 +41,11 @@ task main()
 			resetMotorEncoder(motorB);
 			resetMotorEncoder(motorC);
 
-<<<<<<< HEAD
+
 			//This is wallfollowing
-=======
+
 		}
-			if(SensorValue(ButtonLeft) == 0 || SensorValue(ButtonRight) == 0))
-			{
-				motor(motorB) = 100;
-				motor(motorC) = 100;
-				wait1Mec(595);
-			}
-
-
-
-
-		speedleft = 0;
-		speedright = 20;
-		time = 1000;
->>>>>>> cf4570a70a9ea0f52328bb56cc7a41ca7270f490
-
-			wfta = wfta + 1
+			wfta = wfta + 1;
 
 			if(wfta == 5 && SensorValue(ButtonLeft) == 1)
 			{
@@ -82,6 +67,4 @@ task main()
 			}
 
 		}
-	}
-
 }
